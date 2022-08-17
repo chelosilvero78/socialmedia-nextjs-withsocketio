@@ -40,7 +40,7 @@ function MessageNotificationModal({
         closeIcon
         closeOnDimmerClick
       >
-        <Modal.Header content={`New Message from ${newMessageReceived.senderName}`} />
+        <Modal.Header content={`Nuevo Mensaje desde ${newMessageReceived.senderName}`} />
 
         <Modal.Content>
           <div className="bubbleWrapper">

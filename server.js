@@ -64,7 +64,7 @@ io.on("connection", socket => {
         const receiverSocket = findConnectedUser(postByUserId);
 
         if (receiverSocket && like) {
-          // WHEN YOU WANT TO SEND DATA TO ONE PARTICULAR CLIENT
+          // WHEN YOU WANT TO SEND DATA TO ONE PARTICULAR CLIENT(CUANDO QUIERES ENVIAR DATOS A UN CLIENTE EN PARTICULAR)
           io.to(receiverSocket.socketId).emit("newNotificationReceived", {
             name,
             profilePicUrl,
@@ -87,7 +87,7 @@ io.on("connection", socket => {
     const receiverSocket = findConnectedUser(msgSendToUserId);
 
     if (receiverSocket) {
-      // WHEN YOU WANT TO SEND MESSAGE TO A PARTICULAR SOCKET
+      // WHEN YOU WANT TO SEND MESSAGE TO A PARTICULAR SOCKET (CUANDO QUIERES ENVIAR DATOS A UN CLIENTE EN PARTICULAR)
       io.to(receiverSocket.socketId).emit("newMsgReceived", { newMsg });
     }
     //
@@ -109,7 +109,7 @@ io.on("connection", socket => {
     const receiverSocket = findConnectedUser(msgSendToUserId);
 
     if (receiverSocket) {
-      // WHEN YOU WANT TO SEND MESSAGE TO A PARTICULAR SOCKET
+      // WHEN YOU WANT TO SEND MESSAGE TO A PARTICULAR SOCKET (CUANDO QUIERES ENVIAR DATOS A UN CLIENTE EN PARTICULAR)
       io.to(receiverSocket.socketId).emit("newMsgReceived", { newMsg });
     }
     //

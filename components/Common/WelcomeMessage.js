@@ -10,9 +10,9 @@ export const HeaderMessage = () => {
     <Message
       color="teal"
       attached
-      header={signupRoute ? "Get Started" : "Welcome Back"}
+      header={signupRoute ? "Empezar" : "Bienvenido de nuevo :) "}
       icon={signupRoute ? "settings" : "privacy"}
-      content={signupRoute ? "Create New Account" : "Login with Email and Password"}
+      content={signupRoute ? "Crear Nueva Cuenta" : "Iniciar Sesion con Email y Contraseña"}
     />
   );
 };
@@ -27,7 +27,7 @@ export const FooterMessage = () => {
         <>
           <Message attached="bottom" warning>
             <Icon name="help" />
-            Existing User? <Link href="/login">Login Here Instead</Link>
+            Usuario existente? <Link href="/login">Inicie sesion aqui</Link>
           </Message>
           <Divider hidden />
         </>
@@ -35,12 +35,12 @@ export const FooterMessage = () => {
         <>
           <Message attached="bottom" info>
             <Icon name="lock" />
-            <Link href="/reset">Forgot Password?</Link>
+            <Link href="/reset">Has olvidado tu contraseña?</Link>
           </Message>
 
           <Message attached="bottom" warning>
             <Icon name="help" />
-            New User? <Link href="/signup">Signup Here</Link> Instead
+            Nuevo Usuario? <Link href="/signup">Registrate aqui</Link> 
           </Message>
         </>
       )}

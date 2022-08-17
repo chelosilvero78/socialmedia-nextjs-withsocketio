@@ -44,7 +44,7 @@ function SideMenu({
                 (unreadNotification && { color: "orange" }))}
             />
             <List.Content>
-              {pc && <List.Header content="Notifications" />}
+              {pc && <List.Header content="Notificaciones" />}
             </List.Content>
           </List.Item>
         </Link>
@@ -57,7 +57,7 @@ function SideMenu({
               size="large"
               {...(router.query.username === username && { color: "teal" })}
             />
-            <List.Content>{pc && <List.Header content="Account" />}</List.Content>
+            <List.Content>{pc && <List.Header content="Cuenta" />}</List.Content>
           </List.Item>
         </Link>
         <br />

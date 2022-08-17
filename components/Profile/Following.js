@@ -60,7 +60,7 @@ const Following = ({
                     <Button
                       color={isFollowing ? "instagram" : "twitter"}
                       icon={isFollowing ? "check" : "add user"}
-                      content={isFollowing ? "Following" : "Follow"}
+                      content={isFollowing ? "Siguiendo" : "Seguir"}
                       disabled={followLoading}
                       onClick={() => {
                         setFollowLoading(true);

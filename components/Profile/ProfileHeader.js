@@ -83,7 +83,7 @@ function ProfileHeader({
                   )}
                 </List>
               ) : (
-                <>No Social Media Links </>
+                <>Sin enlaces de redes sociales </>
               )}
             </Grid.Row>
           </Grid.Column>
@@ -99,8 +99,8 @@ function ProfileHeader({
                 compact
                 loading={loading}
                 disabled={loading}
-                content={isFollowing ? "Following" : "Follow"}
-                icon={isFollowing ? "check circle" : "add user"}
+                content={isFollowing ? "Siguiendo" : "Seguir"}
+                icon={isFollowing ? "verificar circulo": "agregar usuario"}
                 color={isFollowing ? "instagram" : "twitter"}
                 onClick={async () => {
                   setLoading(true);

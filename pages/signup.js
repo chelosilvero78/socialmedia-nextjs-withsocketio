@@ -135,8 +135,8 @@ function Signup() {
           />
           <Form.Input
             required
-            label="Name"
-            placeholder="Name"
+            label="Nombres"
+            placeholder="Nombres y Apellidos Completos"
             name="name"
             value={name}
             onChange={handleChange}
@@ -222,7 +222,7 @@ function Signup() {
           <Divider hidden />
           <Button
             icon="signup"
-            content="Signup"
+            content="Registrar"
             type="submit"
             color="orange"
             disabled={submitDisabled}

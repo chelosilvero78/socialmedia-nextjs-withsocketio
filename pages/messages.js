@@ -215,7 +215,7 @@ function Messages({ chatsData, user }) {
       <Segment padded basic size="large" style={{ marginTop: "5px" }}>
         <Header
           icon="home"
-          content="Go Back!"
+          content="Regresar!"
           onClick={() => router.push("/")}
           style={{ cursor: "pointer" }}
         />

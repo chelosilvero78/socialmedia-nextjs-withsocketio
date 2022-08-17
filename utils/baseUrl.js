@@ -1,4 +1,3 @@
-console.log("entorno-->",process.env.MONGO_URI);
 const baseUrl =
   process.env.NODE_ENV !== "production"
     ? "http://localhost:3000"

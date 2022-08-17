@@ -19,7 +19,7 @@ function CommonInputs({
       />
 
       <Button
-        content="Add Social Links"
+        content="Agregar Redes Sociales"
         color="red"
         icon="at"
         type="button"

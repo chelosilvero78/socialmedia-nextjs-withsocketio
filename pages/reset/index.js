@@ -38,8 +38,8 @@ function ResetPage() {
         <Message
           attached
           icon="mail"
-          header="Check Your Inbox"
-          content="Please check your inbox for further instructions"
+          header="Revisa tu correo"
+          content="Por favor revise su bandeja de entrada para más instrucciones"
           success
         />
       ) : (
@@ -68,7 +68,7 @@ function ResetPage() {
             icon="configure"
             type="submit"
             color="orange"
-            content="Submit"
+            content="Enviar"
           />
         </Segment>
       </Form>

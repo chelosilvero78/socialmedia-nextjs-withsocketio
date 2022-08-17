@@ -38,7 +38,7 @@ function CropImageModal({ mediaPreview, setMedia, showModal, setShowModal }) {
         onClose={() => setShowModal(false)}
         open={showModal}
       >
-        <Modal.Header content="Crop image before upload" />
+        <Modal.Header content="Recortar imagen antes de subir" />
 
         <Grid columns={2}>
           <Grid.Column>
@@ -115,13 +115,13 @@ function CropImageModal({ mediaPreview, setMedia, showModal, setShowModal }) {
 
           <Button
             negative
-            content="Cancel"
+            content="Cancelar"
             icon="cancel"
             onClick={() => setShowModal(false)}
           />
 
           <Button
-            content="Crop Image"
+            content="Recortar Imagen"
             icon="checkmark"
             positive
             onClick={getCropData}

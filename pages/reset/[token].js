@@ -57,7 +57,7 @@ function TokenPage() {
           size="large"
           header="Password reset successfull"
           icon="check"
-          content="Login Again"
+          content="Ingresar de nuevo"
           style={{ cursor: "pointer" }}
           onClick={() => router.push("/login")}
         />

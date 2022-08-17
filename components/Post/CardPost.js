@@ -91,13 +91,13 @@ function CardPost({ post, user, setPosts, setShowToastr, socket }) {
                     />
                   }
                 >
-                  <Header as="h4" content="Are you sure?" />
+                  <Header as="h4" content="Esta realmente seguro que desea eliminar?" />
                   <p>This action is irreversible!</p>
 
                   <Button
                     color="red"
                     icon="trash"
-                    content="Delete"
+                    content="Borrar"
                     onClick={() => deletePost(post._id, setPosts, setShowToastr)}
                   />
                 </Popup>
@@ -182,7 +182,7 @@ function CardPost({ post, user, setPosts, setShowToastr, socket }) {
 
             {comments.length > 3 && (
               <Button
-                content="View More"
+                content="Ver mas"
                 color="teal"
                 basic
                 circular

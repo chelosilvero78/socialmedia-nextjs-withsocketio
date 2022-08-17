@@ -51,12 +51,12 @@ function Settings({ newMessagePopup }) {
             <List.Header
               onClick={() => showNewMessageSettings(!newMessageSettings)}
               as="a"
-              content="Show New Message Popup?"
+              content="Mostrar mensaje emergente nuevo?"
             />
           </List.Content>
 
           <div style={{ marginTop: "10px" }}>
-            Control whether a Popup should appear when there is a New Message or not.
+          Controle si debe aparecer una ventana emergente cuando hay un mensaje nuevo o no.
             <br />
             <br />
             <Checkbox
@@ -158,7 +158,7 @@ const UpdatePassword = ({ setSuccess, showPasswordFields }) => {
               icon="configure"
               type="submit"
               color="teal"
-              content="Confirm"
+              content="Confirmar"
             />
 
             <Button
@@ -166,7 +166,7 @@ const UpdatePassword = ({ setSuccess, showPasswordFields }) => {
               compact
               icon="cancel"
               type="button"
-              content="Cancel"
+              content="Cancelar"
               onClick={() => showPasswordFields(false)}
             />
 
