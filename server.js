@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 const path = require("path");
-require('dotenv').config();
+require('dotenv').config(); //agregado por mi(masr) para obtener las variables de entorno
 // OLD VERSION taught in the course.
 // const server = require("http").Server(app);
 // const io = require("socket.io")(server);
