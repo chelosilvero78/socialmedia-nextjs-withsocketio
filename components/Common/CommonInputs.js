@@ -65,7 +65,7 @@ function CommonInputs({
             icon="attention"
             info
             size="small"
-            header="Social Media Links Are Optional!"
+            header="¡Los enlaces de redes sociales son opcionales!"
           />
         </>
       )}

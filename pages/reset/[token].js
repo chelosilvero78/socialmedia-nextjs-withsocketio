@@ -32,7 +32,7 @@ function TokenPage() {
     setLoading(true);
     try {
       if (field1 !== field2) {
-        return setErrorMsg("Passwords do not match");
+        return setErrorMsg("Las contraseñas no coinciden");
       }
 
       await axios.post(`${baseUrl}/api/reset/token`, {
@@ -55,14 +55,14 @@ function TokenPage() {
           attached
           success
           size="large"
-          header="Password reset successfull"
+          header="Restablecimiento de contraseña con éxito"
           icon="check"
           content="Ingresar de nuevo"
           style={{ cursor: "pointer" }}
           onClick={() => router.push("/login")}
         />
       ) : (
-        <Message attached icon="settings" header="Reset Password" color="teal" />
+        <Message attached icon="settings" header="Resetear Contrasaña" color="teal" />
       )}
 
       {!success && (

@@ -29,7 +29,7 @@ router.post("/", authMiddleware, async (req, res) => {
       user.unreadNotification = false;
       await user.save();
     }
-    return res.status(200).send("Updated");
+    return res.status(200).send("Actualizado");
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server Error");

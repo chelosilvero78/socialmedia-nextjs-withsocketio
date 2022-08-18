@@ -1,6 +1,8 @@
 import dayjs from "dayjs";
+require('dayjs/locale/es')
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
+dayjs.locale('es') 
 
 const calculateTime = createdAt => {
   const date1 = dayjs();

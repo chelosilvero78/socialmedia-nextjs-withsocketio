@@ -41,20 +41,20 @@ function MobileHeader({ user: { unreadNotification, email, unreadMessage, userna
               <Link href={`/${username}`}>
                 <Dropdown.Item active={isActive(`/${username}`)}>
                   <Icon name="user" size="large" />
-                  Account
+                  Cuenta
                 </Dropdown.Item>
               </Link>
 
               <Link href="/search">
                 <Dropdown.Item active={isActive("/search")}>
                   <Icon name="search" size="large" />
-                  Search
+                  Buscar
                 </Dropdown.Item>
               </Link>
 
               <Dropdown.Item onClick={() => logoutUser(email)}>
                 <Icon name="sign out alternate" size="large" />
-                Logout
+                Salir
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

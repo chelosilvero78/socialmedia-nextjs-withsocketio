@@ -9,14 +9,14 @@ const likeOrUnlikePost = async (postId, userId, like) => {
   try {
     const post = await PostModel.findById(postId);
 
-    if (!post) return { error: "No post found" };
+    if (!post) return { error: "Post no encontrado :(" };
     const postByUserId = post.user.toString();
 
     if (like) {
       const isLiked =
         post.likes.filter(like => like.user.toString() === userId).length > 0;
 
-      if (isLiked) return { error: "Post liked before" };
+      if (isLiked) return { error: "Post que le gusto antes" };
 
       await post.likes.unshift({ user: userId });
 
@@ -31,7 +31,7 @@ const likeOrUnlikePost = async (postId, userId, like) => {
       const isLiked =
         post.likes.filter(like => like.user.toString() === userId).length === 0;
 
-      if (isLiked) return { error: "Post not liked before" };
+      if (isLiked) return { error: "Post que no le gustaba anteriormente" };
 
       const indexOf = post.likes.map(like => like.user.toString()).indexOf(userId);
 

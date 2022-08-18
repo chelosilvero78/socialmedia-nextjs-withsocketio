@@ -43,7 +43,7 @@ function ResetPage() {
           success
         />
       ) : (
-        <Message attached icon="settings" header="Reset Password" color="teal" />
+        <Message attached icon="settings" header="Restablecer Contraseña" color="teal" />
       )}
 
       <Form loading={loading} onSubmit={resetPassword} error={errorMsg !== null}>
@@ -56,7 +56,7 @@ function ResetPage() {
             type="email"
             iconPosition="left"
             label="Email"
-            placeholder="Enter email address"
+            placeholder="Ingrese direccion de email"
             name="email"
             onChange={e => setEmail(e.target.value)}
             value={email}

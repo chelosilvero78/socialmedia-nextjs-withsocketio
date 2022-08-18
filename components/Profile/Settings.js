@@ -31,7 +31,7 @@ function Settings({ newMessagePopup }) {
             <List.Header
               onClick={() => showPasswordFields(!passwordFields)}
               as="a"
-              content="Update Password"
+              content="Actualizar Contraseña"
             />
           </List.Content>
 

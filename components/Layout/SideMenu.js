@@ -18,7 +18,7 @@ function SideMenu({
         <Link href="/">
           <List.Item active={isActive("/")}>
             <Icon name="home" size="large" {...(isActive("/") && { color: "teal" })} />
-            <List.Content>{pc && <List.Header content="Home" />}</List.Content>
+            <List.Content>{pc && <List.Header content="Inicio" />}</List.Content>
           </List.Item>
         </Link>
         <br />
@@ -30,7 +30,7 @@ function SideMenu({
             {...((isActive("/messages") && { color: "teal" }) ||
               (unreadMessage && { color: "orange" }))}
           />
-          <List.Content>{pc && <List.Header content="Messages" />}</List.Content>
+          <List.Content>{pc && <List.Header content="Mensajes" />}</List.Content>
         </List.Item>
 
         <br />
@@ -64,7 +64,7 @@ function SideMenu({
 
         <List.Item onClick={() => logoutUser(email)}>
           <Icon name="log out" size="large" />
-          <List.Content>{pc && <List.Header content="Logout" />}</List.Content>
+          <List.Content>{pc && <List.Header content="Cerrar Sesión" />}</List.Content>
         </List.Item>
       </List>
     </>

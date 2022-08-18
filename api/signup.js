@@ -23,7 +23,7 @@ router.get("/:username", async (req, res) => {
 
     const user = await UserModel.findOne({ username: username.toLowerCase() });
 
-    if (user) return res.status(401).send("Username already taken");
+    if (user) return res.status(401).send("nombre de usuario ya tomado");
 
     return res.sendStatus(200);
   } catch (error) {
@@ -45,22 +45,22 @@ router.post("/", async (req, res) => {
     instagram
   } = req.body.user;
 
-  if (!isEmail(email)) return res.status(401).send("Invalid Email");
+  if (!isEmail(email)) return res.status(401).send("Email inválido");
 
   if (password.length < 6) {
-    return res.status(401).send("Password must be atleast 6 characters");
+    return res.status(401).send("La contraseña debe tener al menos 6 caracteres");
   }
 
   try {
     let user;
     user = await UserModel.findOne({ email: email.toLowerCase() });
     if (user) {
-      return res.status(401).send("User already registered");
+      return res.status(401).send("Usuario ya registrado");
     }
 
     user = await UserModel.findOne({ username: username.toLowerCase() });
     if (user) {
-      return res.status(401).send("Username already taken");
+      return res.status(401).send("nombre de usuario ya tomado");
     }
 
     user = new UserModel({

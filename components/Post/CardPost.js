@@ -92,7 +92,7 @@ function CardPost({ post, user, setPosts, setShowToastr, socket }) {
                   }
                 >
                   <Header as="h4" content="Esta realmente seguro que desea eliminar?" />
-                  <p>This action is irreversible!</p>
+                  <p>¡Esta acción es irreversible!</p>
 
                   <Button
                     color="red"

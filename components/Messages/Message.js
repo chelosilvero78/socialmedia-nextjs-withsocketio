@@ -32,7 +32,7 @@ function Message({ message, user, deleteMsg, bannerProfilePic, divRef }) {
                 onClick={() => deleteMsg(message._id)}
               />
             }
-            content="This will only delete the message from your inbox!"
+            content="¡Esto solo eliminará el mensaje de su bandeja de entrada!"
             position="top right"
           />
         )}

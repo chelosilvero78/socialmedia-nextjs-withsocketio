@@ -13,13 +13,13 @@ function ProfileMenuTabs({
     <>
       <Menu pointing secondary>
         <Menu.Item
-          name="profile"
+          name="perfil"
           active={activeItem === "profile"}
           onClick={() => handleItemClick("profile")}
         />
 
         <Menu.Item
-          name={`${followersLength} followers`}
+          name={`${followersLength} seguidores`}
           active={activeItem === "followers"}
           onClick={() => handleItemClick("followers")}
         />
@@ -31,13 +31,13 @@ function ProfileMenuTabs({
                 loggedUserFollowStats.following.length > 0
                   ? loggedUserFollowStats.following.length
                   : 0
-              } following`}
+              } siguiendo`}
               active={activeItem === "following"}
               onClick={() => handleItemClick("following")}
             />
 
             <Menu.Item
-              name="Update Profile"
+              name="Actualizar Perfil"
               active={activeItem === "updateProfile"}
               onClick={() => handleItemClick("updateProfile")}
             />

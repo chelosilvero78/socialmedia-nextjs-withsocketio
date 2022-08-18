@@ -19,7 +19,7 @@ function CommentInputField({ postId, user, setComments }) {
       <Form.Input
         value={text}
         onChange={e => setText(e.target.value)}
-        placeholder="Add Comment"
+        placeholder="Agregar Comentario"
         action={{
           color: "blue",
           icon: "edit",

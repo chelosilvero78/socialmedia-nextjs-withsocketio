@@ -85,7 +85,7 @@ function Login() {
           <Divider hidden />
           <Button
             icon="signup"
-            content="Login"
+            content="Ingresar"
             type="submit"
             color="orange"
             disabled={submitDisabled}

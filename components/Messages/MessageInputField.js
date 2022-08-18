@@ -18,7 +18,7 @@ function MessageInputField({ sendMsg }) {
         >
           <Form.Input
             size="large"
-            placeholder="Send New Message"
+            placeholder="Enviar mensaje nuevo"
             value={text}
             onChange={e => setText(e.target.value)}
             action={{

@@ -10,7 +10,7 @@ const loadMessages = async (userId, messagesWith) => {
     );
 
     if (!chat) {
-      return { error: "No chat found" };
+      return { error: "No se encontró ningún chat" };
     }
 
     return { chat };

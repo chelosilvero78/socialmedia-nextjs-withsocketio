@@ -80,7 +80,7 @@ const ResultRenderer = ({ title, image }) => {
   return (
     <List>
       <List.Item>
-        <Image src={image} alt="ProfilePic" avatar />
+        <Image src={image} alt="Imagen de Perfil" avatar />
         <List.Content header={title} as="a" />
       </List.Item>
     </List>

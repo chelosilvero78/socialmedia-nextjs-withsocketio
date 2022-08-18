@@ -23,7 +23,7 @@ function Index({ user, postsData, errorLoading }) {
   const socket = useRef();
 
   useEffect(() => {
-    document.title = `Welcome, ${user.name.split(" ")[0]}`;
+    document.title = `Bienvenido, ${user.name.split(" ")[0]}`;
   }, []);
 
   useEffect(() => {

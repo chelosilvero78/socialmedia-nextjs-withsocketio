@@ -5,7 +5,6 @@ const UserModel = require("../models/UserModel");
 const authMiddleware = require("../middleware/authMiddleware");
 
 // GET ALL CHATS
-
 router.get("/", authMiddleware, async (req, res) => {
   try {
     const { userId } = req;
@@ -40,7 +39,7 @@ router.get("/user/:userToFindId", authMiddleware, async (req, res) => {
     const user = await UserModel.findById(req.params.userToFindId);
 
     if (!user) {
-      return res.status(404).send("No User found");
+      return res.status(404).send("Ningun usuario encontrado");
     }
 
     return res.json({ name: user.name, profilePicUrl: user.profilePicUrl });
@@ -61,7 +60,7 @@ router.delete(`/:messagesWith`, authMiddleware, async (req, res) => {
       { user: userId },
       { $pull: { chats: { messagesWith } } }
     );
-    return res.status(200).send("Chat deleted");
+    return res.status(200).send("Chat eliminado");
 
     // const user = await ChatModel.findOne({ user: userId });
 

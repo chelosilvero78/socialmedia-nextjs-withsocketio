@@ -20,7 +20,7 @@ const ContainerForToastr = ({ children }) => (
 export const PostDeleteToastr = () => {
   return (
     <ContainerForToastr>
-      {toast.info("Deleted Successfully", {
+      {toast.info("Eliminado exitosamente", {
         position: "bottom-center",
         autoClose: 3000,
         hideProgressBar: false,
@@ -51,7 +51,7 @@ export const ErrorToastr = ({ error }) => {
 
 export const MsgSentToastr = () => (
   <ContainerForToastr>
-    {toast.success("Sent successfully", {
+    {toast.success("envio exitoso", {
       position: "bottom-center",
       autoClose: 3000,
       hideProgressBar: false,

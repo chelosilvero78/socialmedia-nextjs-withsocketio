@@ -18,7 +18,7 @@ router.get("/:username", authMiddleware, async (req, res) => {
 
     const user = await UserModel.findOne({ username: username.toLowerCase() });
     if (!user) {
-      return res.status(404).send("No User Found");
+      return res.status(404).send("Usuario no encontrado");
     }
 
     const profile = await ProfileModel.findOne({ user: user._id }).populate("user");
@@ -137,7 +137,7 @@ router.post("/follow/:userToFollowId", authMiddleware, async (req, res) => {
     const userToFollow = await FollowerModel.findOne({ user: userToFollowId });
 
     if (!user || !userToFollow) {
-      return res.status(404).send("User not found");
+      return res.status(404).send("Usuario no encontrado");
     }
 
     const isFollowing =
@@ -146,7 +146,7 @@ router.post("/follow/:userToFollowId", authMiddleware, async (req, res) => {
         .length > 0;
 
     if (isFollowing) {
-      return res.status(401).send("User Already Followed");
+      return res.status(401).send("Usuario ya es seguido");
     }
 
     await user.following.unshift({ user: userToFollowId });
@@ -157,7 +157,7 @@ router.post("/follow/:userToFollowId", authMiddleware, async (req, res) => {
 
     await newFollowerNotification(userId, userToFollowId);
 
-    return res.status(200).send("Updated");
+    return res.status(200).send("Actualizado");
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server Error");
@@ -179,7 +179,7 @@ router.put("/unfollow/:userToUnfollowId", authMiddleware, async (req, res) => {
     });
 
     if (!user || !userToUnfollow) {
-      return res.status(404).send("User not found");
+      return res.status(404).send("Usuario no encontrado");
     }
 
     const isFollowing =
@@ -189,7 +189,7 @@ router.put("/unfollow/:userToUnfollowId", authMiddleware, async (req, res) => {
       ).length === 0;
 
     if (isFollowing) {
-      return res.status(401).send("User Not Followed before");
+      return res.status(401).send("Usuario no seguido antes");
     }
 
     const removeFollowing = await user.following
@@ -208,7 +208,7 @@ router.put("/unfollow/:userToUnfollowId", authMiddleware, async (req, res) => {
 
     await removeFollowerNotification(userId, userToUnfollowId);
 
-    return res.status(200).send("Updated");
+    return res.status(200).send("Actualizado");
   } catch (error) {
     console.error(error);
     res.status(500).send("server error");
@@ -249,7 +249,7 @@ router.post("/update", authMiddleware, async (req, res) => {
       await user.save();
     }
 
-    return res.status(200).send("Success");
+    return res.status(200).send("Exito");
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server Error");
@@ -262,7 +262,7 @@ router.post("/settings/password", authMiddleware, async (req, res) => {
     const { currentPassword, newPassword } = req.body;
 
     if (newPassword.length < 6) {
-      return res.status(400).send("Password must be atleast 6 characters");
+      return res.status(400).send("La contraseña debe tener al menos 6 caracteres");
     }
 
     const user = await UserModel.findById(req.userId).select("+password");
@@ -270,13 +270,13 @@ router.post("/settings/password", authMiddleware, async (req, res) => {
     const isPassword = await bcrypt.compare(currentPassword, user.password);
 
     if (!isPassword) {
-      return res.status(401).send("Invalid Password");
+      return res.status(401).send("Credenciales Invalidas");
     }
 
     user.password = await bcrypt.hash(newPassword, 10);
     await user.save();
 
-    res.status(200).send("Updated successfully");
+    res.status(200).send("Actualizado correctamente");
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server Error");
@@ -297,7 +297,7 @@ router.post("/settings/messagePopup", authMiddleware, async (req, res) => {
     }
 
     await user.save();
-    return res.status(200).send("updated");
+    return res.status(200).send("actualizado");
   } catch (error) {
     console.error(error);
     return res.status(500).send("Server Error");

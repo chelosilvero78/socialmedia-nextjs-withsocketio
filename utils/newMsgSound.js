@@ -4,26 +4,26 @@ const newMsgSound = senderName => {
   sound && sound.play();
 
   if (senderName) {
-    document.title = `New message from ${senderName}`;
+    document.title = `Nuevo mensaje de ${senderName}`;
 
     let changeBackDocTitle = "";
 
     switch (location.pathname) {
       case "/":
         {
-          changeBackDocTitle = "Welcome!";
+          changeBackDocTitle = "Bienvenido!";
         }
         break;
 
       case "/messages":
         {
-          changeBackDocTitle = "Messages";
+          changeBackDocTitle = "Mensajes";
         }
         break;
 
       default:
         {
-          changeBackDocTitle = "Welcome!";
+          changeBackDocTitle = "Bienvenido!";
         }
         break;
     }

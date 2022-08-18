@@ -52,7 +52,7 @@ function UpdateProfile({ Profile }) {
 
           if (media !== null && !profilePicUrl) {
             setLoading(false);
-            return setErrorMsg("Error Uploading Image");
+            return setErrorMsg("Error subiendo imagen");
           }
 
           await profileUpdate(profile, setLoading, setErrorMsg, profilePicUrl);
@@ -90,7 +90,7 @@ function UpdateProfile({ Profile }) {
           color="blue"
           icon="pencil alternate"
           disabled={profile.bio === "" || loading}
-          content="Submit"
+          content="Enviar"
           type="submit"
         />
       </Form>

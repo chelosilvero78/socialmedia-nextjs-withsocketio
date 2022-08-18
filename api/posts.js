@@ -17,7 +17,7 @@ const {
 router.post("/", authMiddleware, async (req, res) => {
   const { text, location, picUrl } = req.body;
 
-  if (text.length < 1) return res.status(401).send("Text must be atleast 1 character");
+  if (text.length < 1) return res.status(401).send("El texto debe tener al menos 1 carácter");
 
   try {
     const newPost = {
@@ -128,7 +128,6 @@ router.get("/:postId", authMiddleware, async (req, res) => {
 });
 
 // DELETE POST
-
 router.delete("/:postId", authMiddleware, async (req, res) => {
   try {
     const { userId } = req;
@@ -137,12 +136,12 @@ router.delete("/:postId", authMiddleware, async (req, res) => {
 
     const post = await PostModel.findById(postId);
     if (!post) {
-      return res.status(404).send("post not found");
+      return res.status(404).send("publicación no encontrada");
     }
 
     const deletePost = async () => {
       await post.remove();
-      return res.status(200).send("Post deleted Successfully");
+      return res.status(200).send("Publicación eliminada con éxito");
     };
 
     if (post.user.toString() !== userId) {
@@ -150,7 +149,7 @@ router.delete("/:postId", authMiddleware, async (req, res) => {
       if (user.role === "root") {
         await deletePost();
       } else {
-        return res.status(401).send("Unauthorized");
+        return res.status(401).send("No autorizado");
       }
     }
 
@@ -162,7 +161,6 @@ router.delete("/:postId", authMiddleware, async (req, res) => {
 });
 
 // LIKE A POST
-
 router.post("/like/:postId", authMiddleware, async (req, res) => {
   try {
     const { postId } = req.params;
@@ -170,14 +168,14 @@ router.post("/like/:postId", authMiddleware, async (req, res) => {
 
     const post = await PostModel.findById(postId);
     if (!post) {
-      return res.status(404).send("No Post found");
+      return res.status(404).send("No se encontró ninguna publicación");
     }
 
     const isLiked =
       post.likes.filter(like => like.user.toString() === userId).length > 0;
 
     if (isLiked) {
-      return res.status(401).send("Post already liked");
+      return res.status(401).send("Ya le gusto la publicacion");
     }
 
     await post.likes.unshift({ user: userId });
@@ -212,7 +210,7 @@ router.put("/unlike/:postId", authMiddleware, async (req, res) => {
       post.likes.filter(like => like.user.toString() === userId).length === 0;
 
     if (isLiked) {
-      return res.status(401).send("Post not liked before");
+      return res.status(401).send("Publicación que no le gustó antes");
     }
 
     const index = post.likes.map(like => like.user.toString()).indexOf(userId);
@@ -242,7 +240,7 @@ router.get("/like/:postId", authMiddleware, async (req, res) => {
 
     const post = await PostModel.findById(postId).populate("likes.user");
     if (!post) {
-      return res.status(404).send("No Post found");
+      return res.status(404).send("No se encontró ninguna publicación");
     }
 
     return res.status(200).json(post.likes);
@@ -262,11 +260,11 @@ router.post("/comment/:postId", authMiddleware, async (req, res) => {
     const { text } = req.body;
 
     if (text.length < 1)
-      return res.status(401).send("Comment should be atleast 1 character");
+      return res.status(401).send("El comentario debe tener al menos 1 carácter");
 
     const post = await PostModel.findById(postId);
 
-    if (!post) return res.status(404).send("Post not found");
+    if (!post) return res.status(404).send("Publicación no encontrada");
 
     const newComment = {
       _id: uuid(),
@@ -321,14 +319,14 @@ router.delete("/:postId/:commentId", authMiddleware, async (req, res) => {
         await removeCommentNotification(postId, commentId, userId, postByUserId);
       }
 
-      return res.status(200).send("Deleted Successfully");
+      return res.status(200).send("Borrado exitosamente");
     };
 
     if (comment.user.toString() !== userId) {
       if (user.role === "root") {
         await deleteComment();
       } else {
-        return res.status(401).send("Unauthorized");
+        return res.status(401).send("No autorizado");
       }
     }
 

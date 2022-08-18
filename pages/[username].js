@@ -46,6 +46,7 @@ function ProfilePage({
 
       try {
         const { username } = router.query;
+        console.log("username-->",username)
         const res = await Axios.get(`/posts/${username}`);
 
         setPosts(res.data);
