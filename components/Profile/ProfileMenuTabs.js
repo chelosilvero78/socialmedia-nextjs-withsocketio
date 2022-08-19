@@ -43,7 +43,7 @@ function ProfileMenuTabs({
             />
 
             <Menu.Item
-              name="settings"
+              name="Configuración"
               active={activeItem === "settings"}
               onClick={() => handleItemClick("settings")}
             />

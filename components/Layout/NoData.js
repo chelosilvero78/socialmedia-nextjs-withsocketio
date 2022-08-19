@@ -23,7 +23,7 @@ export const NoMessages = () => (
   <Message
     info
     icon="telegram plane"
-    header="Sorry"
+    header="Lo siento"
     content="Aún no has enviado mensajes a nadie. ¡Busca arriba para enviar mensajes a alguien!"
   />
 );
