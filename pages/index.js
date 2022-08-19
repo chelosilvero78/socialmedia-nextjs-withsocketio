@@ -92,6 +92,7 @@ export const getServerSideProps = async ctx => {
   }
 };
 
+//--------descripción rapida: ejemplos de como usar dotenv-------------
 // // documentacion oficial nextjs--> variables de entorno--> .env.local-->
 // // pages/index.js
 // export async function getStaticProps() {

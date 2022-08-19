@@ -1,15 +1,12 @@
 <br />
 
-## [Click to view the Udemy Course](https://www.udemy.com/course/mernstack-nextjs-withsocketio/?referralCode=A31CAC3FD91000489D0A)
+## [Click to view the Udemy Course](https://www.udemy.com/course/nextjsmasr-2023/?referralCode=AGOSTO22)
 
 ---
-
 ## Updates made since the course published:
-
 <br>
 
 ## Nextjs version update
-
 - Nextjs version updated to 12.2.4 (Latest one at the time of commit).
 
 ---
@@ -17,7 +14,6 @@
 <br>
 
 ## socket.io version update
-
 - Updated socket io version to 4.4.1 (Latest one at the time of commit). Now io is not a default export from socket.io-client package.
 
 ```javascript
@@ -69,25 +65,14 @@ import { io } from "socket.io-client";
 
 ## A new SocketHoc component
 
-- Explanation about this [Here](https://www.udemy.com/course/mernstack-nextjs-withsocketio/learn/#questions/15297138/).
-
----
 
 <br />
 
 ## getInitialProps replaced with getServerSideProps
 
-- Explanation about this [Here](https://www.udemy.com/course/mernstack-nextjs-withsocketio/learn/lecture/28229950#overview)
-
 ---
 
 <br />
-
-## moment.js replaced with dayjs
-
-- The main reason behind this is that moment.js is in maintenance mode. Also, moment is a huge library.
-
-- Comparatively, dayjs is only 2kb in size. The changes made are inside utils/calculateTime.js
 
 ---
 
